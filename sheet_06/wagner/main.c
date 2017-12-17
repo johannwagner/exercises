@@ -74,15 +74,9 @@ int main(void) {
 
     	printf("Input Needle x: \n");
     	fgets(inputChars, sizeof(inputChars), stdin);
-    	// Removing new line.
-
-    	printf("fgets worked. \n");
 
 		pos = strchr(inputChars, '\n');
 		*pos = '\0';
-
-    	printf("strchr worked. \n");
-
 
     	printf("Input Limit n (Unlimited: -1): \n");
     	fgets(inputNumbers, sizeof(inputNumbers), stdin);
