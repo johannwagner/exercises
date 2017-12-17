@@ -67,19 +67,28 @@ int main(void) {
 
     // fgets read the entire stdin INCLUDING the new line. Tricky.
     char exitCode[20] = ":exit";
+	char *pos;
+
 
     while(strcmp(inputChars, exitCode) != 0) {
 
     	printf("Input Needle x: \n");
     	fgets(inputChars, sizeof(inputChars), stdin);
     	// Removing new line.
-    	strcpy(inputChars,strtok(inputChars, "\n"));
+
+    	printf("fgets worked. \n");
+
+		pos = strchr(inputChars, '\n');
+		*pos = '\0';
+
+    	printf("strchr worked. \n");
 
 
     	printf("Input Limit n (Unlimited: -1): \n");
     	fgets(inputNumbers, sizeof(inputNumbers), stdin);
-    	// Removing new line.
-    	strcpy(inputNumbers,strtok(inputNumbers, "\n"));
+    	
+		pos = strchr(inputNumbers, '\n');
+		*pos = '\0';
 
     	int n = atoi(inputNumbers);
     	int foundResults = 0;
